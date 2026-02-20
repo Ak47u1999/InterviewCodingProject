@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/FeatureFlagEngine.Api/FeatureFlagEngine.Api.csproj" />
+    <Project Path="src/FeatureFlagEngine.Core/FeatureFlagEngine.Core.csproj" />
+    <Project Path="src/FeatureFlagEngine.Infrastructure/FeatureFlagEngine.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/FeatureFlagEngine.Api.Tests/FeatureFlagEngine.Api.Tests.csproj" />
+    <Project Path="tests/FeatureFlagEngine.Core.Tests/FeatureFlagEngine.Core.Tests.csproj" />
+  </Folder>
+</Solution>
