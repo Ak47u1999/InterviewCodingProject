@@ -43,7 +43,7 @@ That's it. The database (SQLite) is created automatically on first run — no se
 # From the root folder
 dotnet test
 
-# You should see: 81 passed, 0 failed
+# You should see: 89 passed, 0 failed
 ```
 
 ## Try It Out
@@ -110,7 +110,7 @@ FeatureFlagEngine/
 │
 └── tests/
     ├── FeatureFlagEngine.Core.Tests/      ← 57 unit tests (model, service, evaluation logic)
-    └── FeatureFlagEngine.Api.Tests/       ← 24 integration tests (full HTTP round-trips)
+    └── FeatureFlagEngine.Api.Tests/       ← 32 integration tests (full HTTP round-trips)
 ```
 
 **Why this matters:** The Core project has zero dependencies on databases or web frameworks. You could plug it into a CLI, a desktop app, or a gRPC service without changing a single line of Core code.
