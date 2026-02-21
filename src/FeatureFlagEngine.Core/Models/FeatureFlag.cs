@@ -8,6 +8,7 @@ public class FeatureFlag
 
     public List<UserOverride> UserOverrides { get; private set; } = new();
     public List<GroupOverride> GroupOverrides { get; private set; } = new();
+    public List<RegionOverride> RegionOverrides { get; private set; } = new();
 
     // EF Core needs a parameterless constructor, but we don't want callers to use it
     private FeatureFlag() { Name = string.Empty; }
@@ -69,6 +70,31 @@ public class FeatureFlag
         if (existing is null) return false;
 
         GroupOverrides.Remove(existing);
+        return true;
+    }
+
+    public void SetRegionOverride(string regionId, bool isEnabled)
+    {
+        if (string.IsNullOrWhiteSpace(regionId))
+            throw new ArgumentException("Region ID cannot be empty.", nameof(regionId));
+
+        var existing = RegionOverrides.FirstOrDefault(o => o.RegionId == regionId);
+        if (existing is not null)
+        {
+            existing.IsEnabled = isEnabled;
+        }
+        else
+        {
+            RegionOverrides.Add(new RegionOverride(Name, regionId, isEnabled));
+        }
+    }
+
+    public bool RemoveRegionOverride(string regionId)
+    {
+        var existing = RegionOverrides.FirstOrDefault(o => o.RegionId == regionId);
+        if (existing is null) return false;
+
+        RegionOverrides.Remove(existing);
         return true;
     }
 }
