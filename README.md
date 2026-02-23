@@ -47,6 +47,7 @@ dotnet test
 ```
 
 ## Try It Out
+Inside the frontend folder run "npm install" once post that "npm run dev" to see the UI in realtime.
 
 Once the server is running, you can test with these commands (or use Postman/browser):
 
